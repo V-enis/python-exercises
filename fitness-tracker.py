@@ -4,22 +4,23 @@
 # Create another function that suggests a fitness plan based on the BMI category.
 # if: underweight, 
 
-name = input("Enter your name: ")
+
+
+name = input("Enter your name: ").capitalize()
 age = int(input("Enter your age: "))
 height = int(input("Enter your height in inches: "))
 weight = float(input("Enter your weight: "))
 unit = input("Enter the unit of measurement (L for pounds, K for kilograms): ")
-bmi = ""
-bmivalue = ""
+bmi = None
+bmivalue = None
 
 if unit == "L":
   pass
 elif unit == "K":
   weight = round((weight * 2.20462), 2)
 
-def calculateBMI():
-  bmi = ((weight * 703) / height) / height
-  print(bmi)
+bmi = ((weight * 703) / height) / height
+
 
 if bmi < 18.5:
   bmivalue = "Underweight"
@@ -28,7 +29,16 @@ elif 18.5 < bmi < 24.9:
 elif 25 < bmi < 29.9:
   bmivalue = "Overweight"
 else:
-  bmivalue = "Please see a doctor"
+  bmivalue = "Very overweight"
 
-def fitnessPlan():
-  if bmivalue == "Underweight"
+print(f"{name}, your BMI is {bmivalue}. To begin your fitness journey, please answer some more questions:")
+
+fitness_level = input("Please let us know your fitness level (beginner, intermediate, expert): ")
+muscle_groups = input("What kind of work out would you like? (full-body, upper-body, lower-body): ")
+exercise_style = input("What kind of workout would you prefer? (cardio, weightlifting, stretching): ")
+
+
+
+
+# def fitnessPlan():
+#  if bmivalue == "Underweight"
