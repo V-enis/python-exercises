@@ -20,6 +20,7 @@ category = input("Please select your category: ")
 
 
 
+
 if category.lower().strip() == "general":
   category = general_trivia
 elif category.lower().strip() == "science":
@@ -28,22 +29,28 @@ elif category.lower().strip() == "history":
   category = history_trivia
 elif category.lower().strip() == "celebrities":
   category = celebrities_trivia
-
+ 
 
 def display_questions(category):
-    for x in range(0, 5):
-        print(category[x]["Q"])
-        print(category[x]["answers"])  
+  score = 0
+  for x in range(0, 5):
+    print(category[x]["Q"])
+    print(category[x]["answers"])  
         
-        while True:
-            answer = input("Your answer (type 'end' to skip): ")  
-            if answer == category[x]["correct"]:  
-                print(f"Correct! {answer} is the right answer!")
-                break  
-            elif answer == "end":
-              break
-            else:
-                print("Incorrect answer, try again") 
+    while True:
+      answer = input("Your answer (type 'end' to skip, will subtract from score): ")  
+      if answer == category[x]["correct"]:  
+        print(f"Correct! {answer} is the right answer!")
+        score += 1
+        break
+      elif answer == "end":
+        score -= 1
+        break
+      else:
+        score -= 1
+        print("Incorrect answer, try again") 
+    print(f"Your score is {score}")
+
 
 display_questions(category)
 
