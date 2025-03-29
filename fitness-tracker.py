@@ -4,6 +4,8 @@
 # Create another function that suggests a fitness plan based on the BMI category.
 # if: underweight, 
 
+from fitness_tracker_api import fetch_exercises
+
 
 
 name = input("Enter your name: ").capitalize()
@@ -29,16 +31,22 @@ elif 18.5 < bmi < 24.9:
 elif 25 < bmi < 29.9:
   bmivalue = "Overweight"
 else:
-  bmivalue = "Very overweight"
+  bmivalue = "very overweight"
 
 print(f"{name}, your BMI is {bmivalue}. To begin your fitness journey, please answer some more questions:")
 
-fitness_level = input("Please let us know your fitness level (beginner, intermediate, expert): ")
-muscle_groups = input("What kind of work out would you like? (full-body, upper-body, lower-body): ")
-exercise_style = input("What kind of workout would you prefer? (cardio, weightlifting, stretching): ")
+difficulty = input("Please let us know your fitness level (beginner, intermediate, expert): ").lower()
+muscle = input("What muscle group would you like to work out? (biceps / calves / chest / forearms / glutes / hamstrings): ").lower()
 
 
+exercises = fetch_exercises(muscle, difficulty)
+
+if exercises:
+    print("Here are some exercises for you:")
+    for i in range(2):
+      exercise = exercises[i]
+      print(f"{exercise['name']}: {exercise['instructions']}")
+else:
+    print("No exercises found. Please check your input.")
 
 
-# def fitnessPlan():
-#  if bmivalue == "Underweight"
