@@ -1,8 +1,6 @@
 # Create a trivia-style quiz game where the user can select different categories (e.g., General Knowledge, Science, History).
 # For each category, create multiple questions with multiple-choice answers.
 # Keep track of the score based on the user’s answers, and provide feedback at the end.
-# Add difficulty levels: easy, medium, and hard.
-# You could even add a timer for each question or a random set of questions.
 
 
 # Importing the trivia data from trivia_data.py
