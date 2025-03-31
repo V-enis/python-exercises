@@ -4,7 +4,7 @@ import requests
 def fetch_exercises(muscle=None, difficulty=None):
   base_url = "https://api.api-ninjas.com/v1/exercises"
   url = f"{base_url}?muscle={muscle}"
-  headers = {'X-Api-Key': "tJ3V8+UTgk9hqkTSxdA24w==sUNfDzHsHiWDUqHD"}
+  headers = {'X-Api-Key': "tJ3V8+UTgk9hqkTSxdA24w==sUNfDzHsHiWDUqHD"} # mock key 
 
   params = {}
 
